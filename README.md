@@ -44,3 +44,16 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Personal Notes
+
+What to test:
+1. Test component renders
+2. Test component renders with props
+3. Test component renders in different states
+4. Test component reacts to events
+
+What NOT to test:
+1. Implementation Details
+2. Third Party Code
+3. Code that is not important from a user point of view
