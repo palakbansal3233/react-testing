@@ -40,8 +40,25 @@ describe('Application', () => {
     const customElement = screen.getByTestId('custom-element');
     expect(customElement).toBeInTheDocument();
 
-    // const paragraphElement = screen.getByText('All fields are mandatory')
-    // expect(paragraphElement).toBeInTheDocument(); Typical uses: div, span and para. Has "SELECTOR" as an option
+    const paragraphElement = screen.getByText('All fields are mandatory', {
+      exact: false // substring match, ignore case
+    })
+    expect(paragraphElement).toBeInTheDocument(); 
+    // Typical uses: div, span and para. Has "SELECTOR" as an option
+
+    /* Regex Examples
+    1. screen.getByText(/World/) -> Substring Match
+    2. screen.getByText(/world/i) -> Substring Match, ignore case
+    3. screen.getByText(/^hello world$/i) -> Full String Match, ignore case
+    */
+
+    /* Custom Function 
+
+    (content?: string, element?: Element | null) => boolean
+
+    <div>Hello World</div>
+    screen.getByText((content) => content.startsWith('Hello'))
+    */
 
     const bioElement = screen.getByRole('textbox', {
       name: 'Bio'
