@@ -1,35 +1,35 @@
-import { render, screen } from '@testing-library/react';
-import user from '@testing-library/user-event';
-import { Counter } from './counter';
+import { render, screen } from '@testing-library/react'
+import user from '@testing-library/user-event'
+import { Counter } from './counter'
 
 describe('Counter', () => {
   test('renders correctly', () => {
     render(<Counter />)
 
-    const countElement = screen.getByRole('heading');
-    expect(countElement).toBeInTheDocument();
+    const countElement = screen.getByRole('heading')
+    expect(countElement).toBeInTheDocument()
 
     const incrementButton = screen.getByRole('button', {
-      name: 'Increment'
+      name: 'Increment',
     })
-    expect(incrementButton).toBeInTheDocument();
+    expect(incrementButton).toBeInTheDocument()
   })
 
   test('renders a count of zero', () => {
-    render(<Counter />);
-    const countElement = screen.getByRole('heading');
-    expect(countElement).toHaveTextContent('0');
+    render(<Counter />)
+    const countElement = screen.getByRole('heading')
+    expect(countElement).toHaveTextContent('0')
   })
 
   test('renders a count of 1 after clicking the increment button', async () => {
     user.setup()
-    render(<Counter />);
+    render(<Counter />)
     const incrementButton = screen.getByRole('button', {
-      name: 'Increment'
+      name: 'Increment',
     })
     await user.click(incrementButton)
-    const countElement = screen.getByRole('heading');
-    expect(countElement).toHaveTextContent('1');
+    const countElement = screen.getByRole('heading')
+    expect(countElement).toHaveTextContent('1')
   })
 
   test('renders a count of 2 after clicking the increment button twice', async () => {
@@ -68,8 +68,6 @@ describe('Counter', () => {
     await user.tab()
     expect(setButton).toHaveFocus()
   })
-
-
 })
 
 /* Pointer Interactions: 

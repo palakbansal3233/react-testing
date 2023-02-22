@@ -1,24 +1,24 @@
-import { Application } from './application';
-import { render, screen } from '@testing-library/react';
+import { Application } from './application'
+import { render, screen } from '@testing-library/react'
 
 describe('Application', () => {
   test('renders correctly', () => {
-    render(<Application />);
+    render(<Application />)
 
     const pageHeading = screen.getByRole('heading', {
-      level: 1
-    });
-    expect(pageHeading).toBeInTheDocument();
+      level: 1,
+    })
+    expect(pageHeading).toBeInTheDocument()
 
     const sectionHeading = screen.getByRole('heading', {
-      level: 2
-    });
-    expect(sectionHeading).toBeInTheDocument();
+      level: 2,
+    })
+    expect(sectionHeading).toBeInTheDocument()
 
     const nameElement = screen.getByRole('textbox', {
-      name: 'Name'
-    });
-    expect(nameElement).toBeInTheDocument();
+      name: 'Name',
+    })
+    expect(nameElement).toBeInTheDocument()
 
     // const nameElement2 = screen.getByLabelText('Name', {
     //   selector: 'input'
@@ -31,19 +31,19 @@ describe('Application', () => {
     // const nameElement4 = screen.getByDisplayValue('Palak');
     // expect(nameElement4).toBeInTheDocument(); [input, textarea, select]
 
-    const imageElement = screen.getByAltText('a person with a laptop');
-    expect(imageElement).toBeInTheDocument();
+    const imageElement = screen.getByAltText('a person with a laptop')
+    expect(imageElement).toBeInTheDocument()
 
-    const closeElement = screen.getByTitle('close');
-    expect(closeElement).toBeInTheDocument();
+    const closeElement = screen.getByTitle('close')
+    expect(closeElement).toBeInTheDocument()
 
-    const customElement = screen.getByTestId('custom-element');
-    expect(customElement).toBeInTheDocument();
+    const customElement = screen.getByTestId('custom-element')
+    expect(customElement).toBeInTheDocument()
 
     const paragraphElement = screen.getByText('All fields are mandatory', {
-      exact: false // substring match, ignore case
+      exact: false, // substring match, ignore case
     })
-    expect(paragraphElement).toBeInTheDocument(); 
+    expect(paragraphElement).toBeInTheDocument()
     // Typical uses: div, span and para. Has "SELECTOR" as an option
 
     /* Regex Examples
@@ -61,23 +61,23 @@ describe('Application', () => {
     */
 
     const bioElement = screen.getByRole('textbox', {
-      name: 'Bio'
-    });
-    expect(bioElement).toBeInTheDocument();
+      name: 'Bio',
+    })
+    expect(bioElement).toBeInTheDocument()
 
-    const jobLocationElement = screen.getByRole('combobox');
-    expect(jobLocationElement).toBeInTheDocument();
+    const jobLocationElement = screen.getByRole('combobox')
+    expect(jobLocationElement).toBeInTheDocument()
 
-    const termsElement = screen.getByRole('checkbox');
-    expect(termsElement).toBeInTheDocument();
+    const termsElement = screen.getByRole('checkbox')
+    expect(termsElement).toBeInTheDocument()
 
     // const termsElement2 = screen.getByLabelText('I agree to the terms and conditions')
     // expect(termsElement2).toBeInTheDocument(); only for reference
 
-    const submitButtonElement = screen.getByRole('button');
-    expect(submitButtonElement).toBeInTheDocument();
+    const submitButtonElement = screen.getByRole('button')
+    expect(submitButtonElement).toBeInTheDocument()
     // expect(submitButtonElement).not.toBeEnabled();
-    expect(submitButtonElement).toBeDisabled();
+    expect(submitButtonElement).toBeDisabled()
   })
 })
 
