@@ -48,12 +48,22 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ## Personal Notes
 
 What to test:
+
 1. Test component renders
 2. Test component renders with props
 3. Test component renders in different states
 4. Test component reacts to events
 
 What NOT to test:
+
 1. Implementation Details
 2. Third Party Code
 3. Code that is not important from a user point of view
+
+Tools for Static Analysis Testing:
+
+1. Typescript
+2. ESLint
+3. Prettier
+4. Husky
+5. lint-staged
